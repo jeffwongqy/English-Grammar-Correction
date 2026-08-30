@@ -18,7 +18,7 @@ To develop a simple LLM-based English grammar correction application that uses L
 - Evaluate the quality of the corrections by testing the pipeline with sentences containing different types of grammatical errors.
 - Demonstrate the application of LLMs to computational linguistics, particularly automated grammar analysis and language correction.
 
-## 5. Common English Grammatical Errors For Testing
+## 5. Testing Common English Grammatical Errors
 1. She go to the store every morning.
 2. I have two cat at my house.
 3. Me and him like playing soccer.
