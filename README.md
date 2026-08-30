@@ -1,6 +1,6 @@
 # English Grammar Correction
 
-<img width="612" height="408" alt="istockphoto-1134880364-612x612" src="https://github.com/user-attachments/assets/654814e0-5c61-458f-a0dd-4504e8c819be" />
+<img width="850" height="408" alt="istockphoto-1134880364-612x612" src="https://github.com/user-attachments/assets/654814e0-5c61-458f-a0dd-4504e8c819be" />
 
 
 ## 1. Introduction 
