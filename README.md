@@ -1,5 +1,8 @@
 # English Grammar Correction
 
+<img width="612" height="408" alt="istockphoto-1134880364-612x612" src="https://github.com/user-attachments/assets/654814e0-5c61-458f-a0dd-4504e8c819be" />
+
+
 ## 1. Introduction 
 English grammar correction is an important application of Natural Language Processing (NLP) that aims to identify and correct errors in written English. Traditional grammar-checking systems often rely on predefined linguistic rules, while modern Large Language Models (LLMs) can understand sentence context and provide more flexible corrections.
 
