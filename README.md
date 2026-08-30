@@ -23,7 +23,7 @@ To develop a simple LLM-based English grammar correction application that uses L
 2. I have two cat at my house.
 3. Me and him like playing soccer.
 4. She sings very good during the show.
-5. Yesterday, I walk to the park and buy ice cream
+5. Yesterday, I walk to the park and buy ice cream.
 6. He is married with a wonderful doctor.
 7. Walking down the street, the tall buildings looked amazing.
 8. The scientist whom discovered the cure won an award.
