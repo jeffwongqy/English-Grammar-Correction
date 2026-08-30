@@ -198,4 +198,10 @@ if st.button("Correct Grammar"):
 19. Because he was afraid of to fail the test, he studied all night.
 20. While she was the smartest of the two sisters, she struggled with geometry.
 
-## 6. Demo Working Implementation
+## 6. Demo Working Implementation 
+<img width="1917" height="967" alt="pic1" src="https://github.com/user-attachments/assets/c15df778-3683-47ac-928c-f6b9d87873cd" />
+
+<img width="1917" height="967" alt="pic2" src="https://github.com/user-attachments/assets/33fc5cd4-f395-4562-9401-2a82a0f42e12" />
+
+
+
