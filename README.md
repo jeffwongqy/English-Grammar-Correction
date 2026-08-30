@@ -17,3 +17,25 @@ To develop a simple LLM-based English grammar correction application that uses L
 - Build an interactive Streamlit application that allows users to enter English sentences and view the analysis and corrected output.
 - Evaluate the quality of the corrections by testing the pipeline with sentences containing different types of grammatical errors.
 - Demonstrate the application of LLMs to computational linguistics, particularly automated grammar analysis and language correction.
+
+## 5. Common English Grammatical Errors For Testing
+1. She go to the store every morning.
+2. I have two cat at my house.
+3. Me and him like playing soccer.
+4. She sings very good during the show.
+5. Yesterday, I walk to the park and buy ice cream
+6. He is married with a wonderful doctor.
+7. Walking down the street, the tall buildings looked amazing.
+8. The scientist whom discovered the cure won an award.
+9. If I would have known the truth, I would tell you.
+10. The box of old letters and photos that were found in the attic are valuable.
+11. Although exhausted from the long shift, the patient's chart was forgotten by the nurse.
+12. The list of rare books that we found in the attic are very valuable.
+13. Because the prize was given to Sarah and I, we felt very honored.
+14. By the time the rescue team arrived at the mountain, the heavy snowstorm buried the cabin.
+15. The accountant whom managed the company finances suddenly resigned yesterday.
+16. The director insisted that every actor arrives on time for rehearsals.
+17. Since Mark wanted to reduce his stress and traveling less, he changed jobs.
+18. If she would have studied harder for the final exam, she passed with an A.
+19. Because he was afraid of to fail the test, he studied all night.
+20. While she was the smartest of the two sisters, she struggled with geometry.
