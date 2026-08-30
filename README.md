@@ -23,6 +23,150 @@ To develop a simple LLM-based English grammar correction application that uses L
 
 ## 4. Langchain RunnableSequence 
 
+### 4.1 Ollama LLM
+Configures the local llama3.2 model to perform the linguistic analysis and correction tasks.
+
+```python
+llm  = ChatOllama(model = "llama3.2", temperature = 0, num_ctx = 1024)
+```
+
+### 4.2 Analysis Prompt
+Instructs the LLM to identify grammar, spelling, word-choice, and punctuation errors without correcting the sentence.
+
+```python
+analysis_prompt = ChatPromptTemplate.from_template(
+    
+    """
+    You are an English grammar expert.
+    
+    Analyze this sentence:
+    {sentence}
+    
+    Identify the important grammar, spelling, word-choice, and punctuation errors.
+    
+    Provide brief explanation for each error. 
+    
+    Do not rewrite the sentence yet.
+    """
+)
+```
+
+### 4.3 Correction Prompt 
+Uses the original sentence and grammar analysis to generate a grammatically corrected sentence while preserving its meaning.
+
+```python
+correction_prompt = ChatPromptTemplate.from_template(
+    
+    """
+    You are an English grammar correction expert. 
+    
+    Original sentence:
+    {sentence}
+    
+    Grammar analysis:
+    {analysis}
+    
+    Correct the sentence.
+    
+    Rules:
+    - Preserve the original meaning.
+    - Use only standard English.
+    - Do not add unnecessary information.
+    - Return only the corrected sentence. 
+    """
+)
+```
+
+### 4.4 Explanation Prompt
+Instructs the LLM to explain the main grammatical changes in a concise and understandable manner.
+
+```python
+explanation_prompt = ChatPromptTemplate.from_template(
+    
+    """
+    You are an English language teacher.
+    
+    Original sentence:
+    {sentence}
+    
+    Corrected sentence: 
+    {correction}
+    
+    Explain the main changes made.
+    
+    Keep the explanation concise and easy to understand. 
+    """
+)
+```
+
+### 4.5 Langchain Chains
+Connects each prompt to the LLM and StrOutputParser to convert the model response into readable text.
+
+```python
+analysis_chain = analysis_prompt | llm | StrOutputParser()
+correction_chain = correction_prompt | llm | StrOutputParser()
+explanation_chain = explanation_prompt | llm | StrOutputParser()
+```
+
+### 4.6 RunnableSequence Pipelines
+Executes the analysis, correction, and explanation stages sequentially while preserving the information generated at each stage.
+
+```python
+grammar_pipeline = RunnableSequence(
+    
+    RunnablePassthrough.assign(
+        analysis = analysis_chain
+    ), 
+    
+    RunnablePassthrough.assign(
+        correction = correction_chain
+    ), 
+    
+    RunnablePassthrough.assign(
+        explanation = explanation_chain
+    )
+)
+```
+
+### 4.7 User Input
+Allows users to enter an English sentence for grammatical analysis and correction.
+
+```python
+sentence = st.text_area("Enter an English sentence", 
+                        height = 120, 
+                        placeholder = ("Example: She don't like to go school yesterday"))
+```
+
+### 4.8 Validation 
+Checks whether the user has entered a sentence before executing the pipeline.
+
+### 4.9 Pipeline Execution 
+Invokes the complete RunnableSequence and processes the submitted sentence through all three stages.
+
+### 4.10 Output Display
+Presents the original sentence, identified errors, corrected sentence, and explanation separately in the Streamlit interface.
+
+```python
+if st.button("Correct Grammar"):
+    if not sentence.strip():
+        st.warning("Please enter a sentence.")
+    else:
+        with st.spinner("Analyzing and correcting ..."):
+            result = grammar_pipeline.invoke({'sentence': sentence})
+    
+        st.subheader("Original Sentence")
+        st.write(result["sentence"])
+        
+        st.subheader("Grammar Analysis")
+        st.write(result["analysis"])
+        
+        st.subheader("Corrected Sentence")
+        st.write(result["correction"])
+        
+        st.subheader("Explanation")
+        st.write(result["explanation"])
+
+```
 
 ## 5. Testing Common English Grammatical Errors
 1. She go to the store every morning.
