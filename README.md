@@ -23,6 +23,14 @@ To develop a simple LLM-based English grammar correction application that uses L
 
 ## 4. Langchain RunnableSequence 
 
+```python
+import streamlit as st
+from langchain_ollama import ChatOllama
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from langchain_core.runnables import RunnableSequence, RunnablePassthrough
+```
+
 ### 4.1 Ollama LLM
 Configures the local llama3.2 model to perform the linguistic analysis and correction tasks.
 
